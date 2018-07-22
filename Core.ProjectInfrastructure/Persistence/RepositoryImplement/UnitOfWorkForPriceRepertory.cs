@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement
 {
+    //PriceRepertory
     public class UnitOfWorkForPriceRepertory : IUnitOfWorkForPriceRepertory
     {
         private IPriceRepertoryRepository _pricerepertoryRepository;
