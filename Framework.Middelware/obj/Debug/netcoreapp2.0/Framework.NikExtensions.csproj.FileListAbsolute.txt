@@ -1,0 +1,16 @@
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.NikExtensions.deps.json
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.NikExtensions.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.NikExtensions.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.Domain.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.Domain.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.csprojResolveAssemblyReference.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.csproj.CoreCompileInputs.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.AssemblyInfoInputs.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.AssemblyInfo.cs
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.csproj.CopyComplete
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.dll
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.NikExtensions.pdb

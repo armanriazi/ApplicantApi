@@ -1,0 +1,16 @@
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.csproj.CoreCompileInputs.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.AssemblyInfoInputs.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.AssemblyInfo.cs
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.Middelware.deps.json
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.Middelware.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Framework.Middelware.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.Domain.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.Domain.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.pdb
+D:\ApplicantApi\Framework.Middelware\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.csprojResolveAssemblyReference.cache
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.csproj.CopyComplete
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.dll
+D:\ApplicantApi\Framework.Middelware\obj\Debug\netcoreapp2.0\Framework.Middelware.pdb

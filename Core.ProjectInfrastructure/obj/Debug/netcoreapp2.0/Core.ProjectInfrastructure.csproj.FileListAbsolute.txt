@@ -1,0 +1,16 @@
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.deps.json
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.runtimeconfig.json
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.runtimeconfig.dev.json
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.dll
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.ProjectInfrastructure.pdb
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.Domain.dll
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Core.Domain.pdb
+D:\ApplicantApi\Core.ProjectInfrastructure\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.csprojResolveAssemblyReference.cache
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.csproj.CoreCompileInputs.cache
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.AssemblyInfoInputs.cache
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.AssemblyInfo.cs
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.csproj.CopyComplete
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.dll
+D:\ApplicantApi\Core.ProjectInfrastructure\obj\Debug\netcoreapp2.0\Core.ProjectInfrastructure.pdb

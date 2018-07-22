@@ -1,0 +1,14 @@
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Project.Application.WebHostCore.deps.json
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Project.Application.WebHostCore.runtimeconfig.json
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Project.Application.WebHostCore.runtimeconfig.dev.json
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Project.Application.WebHostCore.dll
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Project.Application.WebHostCore.pdb
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Core.Domain.dll
+D:\ApplicantApi\Project.Application.WebHostCore\bin\Debug\netcoreapp2.0\Core.Domain.pdb
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.csprojResolveAssemblyReference.cache
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.csproj.CoreCompileInputs.cache
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.AssemblyInfoInputs.cache
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.AssemblyInfo.cs
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.csproj.CopyComplete
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.dll
+D:\ApplicantApi\Project.Application.WebHostCore\obj\Debug\netcoreapp2.0\Project.Application.WebHostCore.pdb

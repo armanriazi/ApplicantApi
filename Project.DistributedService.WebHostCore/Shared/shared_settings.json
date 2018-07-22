@@ -1,0 +1,12 @@
+﻿  {
+  "Logging": {  
+    "IncludeScopes": false,  
+    "LogLevel": {  
+      "Default": "Warning"  
+    }  
+  },
+    "ConnectionStrings": {
+      "MaliAlborzConnection": "Data Source=172.18.4.75;Initial Catalog=MaliAlborz;User ID=sa;Password=zse098$;",
+      "DocumentDatabaseConnection": "Data Source=172.18.4.75;Initial Catalog=DocumentDatabase;User ID=sa;Password=zse098$;"
+    }  
+}  
