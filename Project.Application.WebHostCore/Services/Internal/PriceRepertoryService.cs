@@ -31,5 +31,17 @@ namespace Project.Application.WebHostCore.Services.Internal
             var result = await _unitOfWork.PriceRepertoryRepository.FindByDapperQueryPriceRepertory(query);
             return result;
         }
+
+        public async Task<IEnumerable<dynamic>> GetProjectManagementSystemProjectReport(string accFinancialYearID, string bprID, string sortExpression, string orderBy)
+        {
+            var result = await _unitOfWork.PriceRepertoryRepository.FindByDapperQueryProjectManagementSystemProjectReport(accFinancialYearID, bprID, sortExpression, orderBy);
+            return result;
+        }
+
+        public async Task<IEnumerable<dynamic>> GetBasePriceRepertoryPriceTextField(string query)
+        {
+            var result = await _unitOfWork.PriceRepertoryRepository.FindByDapperQueryBasePriceRepertoryPriceTextField(query);
+            return result;
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace Project.Application.WebHostCore.Services.Internal
         }
     
 
-        public async Task<IEnumerable<dynamic>> GetProjectManagementSystemReport(string budgetProjectId_Fk, string orderBy,int reportKind)
+        public async Task<IEnumerable<dynamic>> GetProjectManagementSystemReport(string budgetProjectId_Fk, string orderBy,int reportKind, int? userId, string accFinancialYearID, string desc)
         {
-            var result=await _unitOfWork.ProjectManagementSystemReportRepository.FindByDapperQuery(budgetProjectId_Fk, orderBy, reportKind);           
+            var result = await _unitOfWork.ProjectManagementSystemReportRepository.FindByDapperQuery(budgetProjectId_Fk, orderBy, reportKind, userId, accFinancialYearID, desc);
             return result;
         }
 

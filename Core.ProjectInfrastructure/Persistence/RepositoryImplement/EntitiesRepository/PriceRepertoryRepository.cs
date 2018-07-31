@@ -53,7 +53,7 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
         {
             var storeProcedureName = "[dbo].[TBL_Prc_DdlSelect]";
             var param = new DynamicParameters();
-            param.Add("WhereClause1", query);
+            param.Add("WhereClause1", "ACC_FinancialYearID="+query);
             param.Add("WhereClause2", null);
             param.Add("WhereClause3", null);
             param.Add("WhereClause4", null);
@@ -65,6 +65,38 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
             return list;
         }
+
+        public async Task<IEnumerable<dynamic>> FindByDapperQueryProjectManagementSystemProjectReport(string accFinancialYearID,string bprID, string sortExpression, string  orderBy)
+        {
+            var storeProcedureName = "[dbo].[PMS_Project_Reports]";
+            var param = new DynamicParameters();
+            param.Add("PMS_PshID", 0);
+            param.Add("WhereClauseOutQuery", "TBL_BprID_fk="+bprID);       
+            param.Add("WhereClauseQuery1", null);
+            param.Add("WhereClauseQuery2", null);
+            param.Add("WhereClauseQuery3", null);
+            param.Add("WhereClauseQuery4", null);            
+            param.Add("OrderBy", orderBy);            
+            param.Add("ACC_FinancialYearID", accFinancialYearID);
+            param.Add("TBL_UserID", 1660);
+            param.Add("ReportKind", 200);
+            param.Add("SQLOut", null);
+            var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
+            return list;
+        }
+
+        public async Task<IEnumerable<dynamic>> FindByDapperQueryBasePriceRepertoryPriceTextField(string query)
+        {            
+            var storeProcedureName = "[dbo].[TBL_Bpr_SelectByPk]";
+            var param = new DynamicParameters();
+            param.Add("TBL_BprID", query);
+            var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
+            return list;
+        }
+
+
+
+
         Task<IEnumerable<dynamic>> IReadOnlyRepository.FindAll()
         {
             throw new NotImplementedException();
