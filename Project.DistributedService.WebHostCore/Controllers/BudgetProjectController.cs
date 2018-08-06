@@ -8,7 +8,7 @@ using StackExchange.Exceptional;
 
 namespace Project.DistributedService.WebHostCore.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class BudgetProjectController : Controller
     {
 
@@ -26,7 +26,7 @@ namespace Project.DistributedService.WebHostCore.Controllers
         }
         [HttpPost]
         [Produces("application/json", Type = typeof(LoginForm))]
-        public async Task<IActionResult> Post([FromBody]LoginForm codeMeli)
+        public async Task<IActionResult> Login([FromBody]LoginForm codeMeli)
         {
 
             if (!ModelState.IsValid)
@@ -42,6 +42,23 @@ namespace Project.DistributedService.WebHostCore.Controllers
             }
             return Ok(resultData);
         }
+        [HttpPost]
+        [Produces("application/json", Type = typeof(String))]
+        public async Task<IActionResult> PostBudgetProjectPlanTextFieldsAction([FromBody]String budgetProjectId)
+        {
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _budprojectService.GetBudgetProjectPlanTextFields(budgetProjectId);
+
+            if (resultData == null || resultData.Count() == 0)
+            {
+                return NotFound();
+            }
+            return Ok(resultData);
+        }
     }
 }

@@ -90,6 +90,8 @@ namespace Project.DistributedService.WebHostCore.Controllers
             return Ok(resultData);
         }
 
+
+
         public class PriceRepertoryGrid
         {
             public string AccFinancialYearID { get; set; }

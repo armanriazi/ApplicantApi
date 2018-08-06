@@ -28,6 +28,9 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
 
             switch (reportKind)
             {
+                case 201:
+                    whereClauseOutQuery = "TBL_PrcID_fk="+query+" AND ACC_FinancialYearID=" + accFinancialYearID;
+                    break;
                 case 202:
                     whereClauseOutQuery = "BUD_ProjectID_fk=" + query ;                   
                     break;
@@ -48,6 +51,15 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
                     break;
                 case 206:
                     whereClauseOutQuery = "WOS_WoID_fk<>0  and  BUD_ProjectID_fk=" + query;
+                    break;
+                case 207:
+                    whereClauseOutQuery = "BUD_ProjectID_fk=" + query;
+                    break;
+                case 208:
+                    whereClauseOutQuery = "BUD_ProjectID_fk=" + query;
+                    break;
+                case 209:
+                    whereClauseOutQuery = "BUD_ProjectID_fk=" + query;
                     break;
                 case 210:
                     whereClauseOutQuery = "BUD_ProjectID_fk=" + query + " and PMS_PdtparentID_fk in(100,200)";
@@ -72,21 +84,6 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             param.Add("TBL_UserID", userId);
             param.Add("ReportKind", reportKind);
             param.Add("SqlOut", null);
-
-
-//select'دستور کار'
-//exec[dbo].[PMS_Project_Reports] @PMS_PshID = 0,@WhereClauseOutQuery = N'BUD_ProjectID_fk=94312656 and WOS_WoID_fk<>0 ',@WhereClauseQuery1 = N'',@WhereClauseQuery2 = N'',@WhereClauseQuery3 = N'',@WhereClauseQuery4 = N'',@OrderBy = N'',@ACC_FinancialYearID = N'1396      ',@TBL_UserID = 1660,@ReportKind = 206,@SqlOut = N''
-
-//select'عوامل اجرایی'
-//exec[dbo].[PMS_Project_Reports] @PMS_PshID = 0,@WhereClauseOutQuery = N'BUD_ProjectID_fk=94312656 ',@WhereClauseQuery1 = N'',@WhereClauseQuery2 = N'',@WhereClauseQuery3 = N'',@WhereClauseQuery4 = N'',@OrderBy = N'',@ACC_FinancialYearID = N'1394      ',@TBL_UserID = 1660,@ReportKind = 207,@SqlOut = N''
-
-//select'سوابق نظارتی'
-//exec[dbo].[PMS_Project_Reports] @PMS_PshID = 0,@WhereClauseOutQuery = N'BUD_ProjectID_fk=94312656 ',@WhereClauseQuery1 = N'',@WhereClauseQuery2 = N'',@WhereClauseQuery3 = N'',@WhereClauseQuery4 = N'',@OrderBy = N'',@ACC_FinancialYearID = N'1394      ',@TBL_UserID = 1660,@ReportKind = 208,@SqlOut = N''
-
-//select'پیشرفت فیزیکی'
-//exec[dbo].[PMS_Project_Reports] @PMS_PshID = 0,@WhereClauseOutQuery = N'BUD_ProjectID_fk=94312656 ',@WhereClauseQuery1 = N'',@WhereClauseQuery2 = N'',@WhereClauseQuery3 = N'',@WhereClauseQuery4 = N'',@OrderBy = N'',@ACC_FinancialYearID = N'1394      ',@TBL_UserID = 1660,@ReportKind = 209,@SqlOut = N''
-
-
 
             var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
             return list;            

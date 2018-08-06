@@ -35,6 +35,16 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             //int b = p.Get<int>("@b");
         }
 
+        public async Task<IEnumerable<dynamic>> FindByDapperQueryIdentityProjectPlan(string query)
+        {
+            var storeProcedureName = "[dbo].[BUD_Project_SelectByPK]";
+            var param = new DynamicParameters();
+            param.Add("BUD_ProjectID", query);           
+            var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
+            return list;
+        }
+
+
         Task<IEnumerable<dynamic>> IReadOnlyRepository.FindAll()
         {
             throw new System.NotImplementedException();

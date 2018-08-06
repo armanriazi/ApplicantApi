@@ -10,8 +10,6 @@ namespace Project.DistributedService.WebHostCore.Controllers
     [Route("api/[controller]/[action]")]
     public class ProjectManagementSystemProjectReportController : Controller
     {
-
-
         private readonly IProjectManagementSystemService _projectManagementSystemprojectService;
 
         public ProjectManagementSystemProjectReportController(IProjectManagementSystemService projectManagementSystemprojectService)
@@ -27,6 +25,7 @@ namespace Project.DistributedService.WebHostCore.Controllers
             public string AccFinancialYearId { get; set; }
             public string Desc { get; set; }
         }
+
         [HttpPost]
         [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
         public async Task<IActionResult> PostProjectManagementSystemProjectReportPlanItemsGridAction([FromBody]ProjectManagementSystemProjectReportGrid projectManagementSystemProjectReport)
@@ -89,8 +88,8 @@ namespace Project.DistributedService.WebHostCore.Controllers
             return Ok(resultData);
         }
         [HttpPost]
-        [Produces("application/json", Type = typeof(String))]
-        public async Task<IActionResult> PostProjectManagementSystemProjectReportPlanContractorsPriceGridAction([FromBody]String budgetprojectid)
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectReportPlanContractorsPriceGridAction([FromBody]ProjectManagementSystemProjectReportGrid budgetproject)
         {
 
             if (!ModelState.IsValid)
@@ -98,7 +97,7 @@ namespace Project.DistributedService.WebHostCore.Controllers
                 return BadRequest(ModelState);
             }
 
-            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReport(budgetprojectid, "", 225,null,"","");
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReport(budgetproject.BudgetProjectId, budgetproject.Orderby, 225, budgetproject.UserId, budgetproject.AccFinancialYearId, budgetproject.Desc);
 
             if (resultData == null || resultData.Count() == 0)
             {
@@ -240,6 +239,99 @@ namespace Project.DistributedService.WebHostCore.Controllers
 
             return Ok(resultData);
         }
+
+        [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectExecutionAgentsGridAction([FromBody]ProjectManagementSystemProjectReportGrid projectManagementSystemProjectReport)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReport(projectManagementSystemProjectReport.BudgetProjectId, projectManagementSystemProjectReport.Orderby, 207, projectManagementSystemProjectReport.UserId, projectManagementSystemProjectReport.AccFinancialYearId, projectManagementSystemProjectReport.Desc);
+
+            if (resultData == null || resultData.Count() == 0)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
+
+        [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectSupervistoryHistoryGridAction([FromBody]ProjectManagementSystemProjectReportGrid projectManagementSystemProjectReport)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReport(projectManagementSystemProjectReport.BudgetProjectId, projectManagementSystemProjectReport.Orderby, 208, projectManagementSystemProjectReport.UserId, projectManagementSystemProjectReport.AccFinancialYearId, projectManagementSystemProjectReport.Desc);
+
+            if (resultData == null || resultData.Count() == 0)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
+
+        [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectPhysicalExtendGridAction([FromBody]ProjectManagementSystemProjectReportGrid projectManagementSystemProjectReport)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReport(projectManagementSystemProjectReport.BudgetProjectId, projectManagementSystemProjectReport.Orderby, 209, projectManagementSystemProjectReport.UserId, projectManagementSystemProjectReport.AccFinancialYearId, projectManagementSystemProjectReport.Desc);
+
+            if (resultData == null || resultData.Count() == 0)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
+
+        public class ProjectManagementSystemProjectReportPriceRepretoryTableViewGrid
+        {
+            public string TBL_PrcID_fk { get; set; }
+            public string Orderby { get; set; }
+            public int? UserId { get; set; }
+            public string AccFinancialYearId { get; set; }
+            public string Desc { get; set; }
+        }
+        [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportPriceRepretoryTableViewGrid))]
+        public async Task<IActionResult> PostProjectManagementSystemReportPriceContextTableViewGridAction([FromBody]ProjectManagementSystemProjectReportPriceRepretoryTableViewGrid projectManagementSystemProjectReport)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReportPriceContextTableView(projectManagementSystemProjectReport.TBL_PrcID_fk, projectManagementSystemProjectReport.Orderby, 201, projectManagementSystemProjectReport.UserId, projectManagementSystemProjectReport.AccFinancialYearId, projectManagementSystemProjectReport.Desc);
+
+            if (resultData == null || resultData.Count() == 0)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
+
     }
 }
 

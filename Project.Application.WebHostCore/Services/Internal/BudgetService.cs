@@ -17,5 +17,10 @@ namespace Project.Application.WebHostCore.Services.Internal
             var result=await _unitOfWork.BudgetProjectRepository.FindByDapperQuery(codeMeli);    
             return result;
         }
+        public async Task<IEnumerable<dynamic>> GetBudgetProjectPlanTextFields(string query)
+        {
+            var result = await _unitOfWork.BudgetProjectRepository.FindByDapperQueryIdentityProjectPlan(query);
+            return result;
+        }
     }
 }

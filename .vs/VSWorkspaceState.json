@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Server"
+    "\\Core.Domain",
+    "\\Core.Domain\\SeedWork",
+    "\\Core.Domain\\SeedWork\\Repository",
+    "\\Core.ProjectInfrastructure",
+    "\\Core.ProjectInfrastructure\\Persistence",
+    "\\Core.ProjectInfrastructure\\Persistence\\RepositoryImplement",
+    "\\Core.ProjectInfrastructure\\Persistence\\RepositoryImplement\\EntitiesRepository",
+    "\\Project.DistributedService.WebHostCore",
+    "\\Project.DistributedService.WebHostCore\\Controllers"
   ],
-  "SelectedNode": "\\Server",
   "PreviewInSolutionExplorer": false
 }

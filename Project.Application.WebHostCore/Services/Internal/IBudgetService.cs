@@ -6,5 +6,7 @@ namespace Project.Application.WebHostCore.Services.Internal
     public interface IBudgetService
     {
         Task<IEnumerable<dynamic>> Login(string codeMeli);
+        Task<IEnumerable<dynamic>> GetBudgetProjectPlanTextFields(string query);
+
     }
 }

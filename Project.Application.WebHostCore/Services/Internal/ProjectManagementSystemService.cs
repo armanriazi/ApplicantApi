@@ -31,6 +31,13 @@ namespace Project.Application.WebHostCore.Services.Internal
             var result = await _unitOfWork.ProjectManagementSystemReportRepository.FindByDapperQuerySendToCartable(budProjectId, nationalCode, trackingCode, accFinancialYearID);
             return result;
         }
+
+        public async Task<IEnumerable<dynamic>> GetProjectManagementSystemReportPriceContextTableView(string tBL_PrcID_fk, string orderBy,int reportKind, int? userId, string accFinancialYearID,string desc)
+        {
+            var result = await _unitOfWork.ProjectManagementSystemReportRepository.FindByDapperQuery(tBL_PrcID_fk, orderBy, reportKind, userId, accFinancialYearID,desc);
+            return result;
+        }
+
     }
 }
 

@@ -43,5 +43,7 @@ namespace Project.Application.WebHostCore.Services.Internal
             var result = await _unitOfWork.PriceRepertoryRepository.FindByDapperQueryBasePriceRepertoryPriceTextField(query);
             return result;
         }
+
+       
     }
 }

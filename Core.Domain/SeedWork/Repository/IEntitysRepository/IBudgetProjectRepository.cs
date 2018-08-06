@@ -11,5 +11,6 @@ namespace Core.Domain.SeedWork.Repository.IEntitysRepository
     public interface IBudgetProjectRepository : IRepository
     {
         Task<IEnumerable<dynamic>> FindByDapperQuery(string query);
+        Task<IEnumerable<dynamic>> FindByDapperQueryIdentityProjectPlan(string query);
     }
 }

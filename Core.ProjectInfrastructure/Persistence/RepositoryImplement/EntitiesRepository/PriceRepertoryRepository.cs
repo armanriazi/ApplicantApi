@@ -85,6 +85,7 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             return list;
         }
 
+
         public async Task<IEnumerable<dynamic>> FindByDapperQueryBasePriceRepertoryPriceTextField(string query)
         {            
             var storeProcedureName = "[dbo].[TBL_Bpr_SelectByPk]";
