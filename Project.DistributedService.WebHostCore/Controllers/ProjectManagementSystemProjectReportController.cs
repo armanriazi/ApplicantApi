@@ -87,6 +87,32 @@ namespace Project.DistributedService.WebHostCore.Controllers
 
             return Ok(resultData);
         }
+
+        public class ProjectManagementSystemProjectFileDownload
+        {            
+            public byte fileTypeId { get; set; }
+            public string tblIdID { get; set; }
+        }
+            [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectFileDownload))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectReportFileDownload([FromBody]ProjectManagementSystemProjectFileDownload projectManagementSystemProjectFileDownload)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReportFileDownload(projectManagementSystemProjectFileDownload.fileTypeId, projectManagementSystemProjectFileDownload.tblIdID);
+
+            if (resultData == null)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
         [HttpPost]
         [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
         public async Task<IActionResult> PostProjectManagementSystemProjectReportPlanContractorsPriceGridAction([FromBody]ProjectManagementSystemProjectReportGrid budgetproject)
@@ -135,7 +161,36 @@ namespace Project.DistributedService.WebHostCore.Controllers
 
             return Ok(resultData);
         }
+        public class ProjectManagementSystemProjectReportSetWinner
+        {
+            public string PmsPppId { get; set; }
+            public string BudProjectId { get; set; }
+            public string NationoanlCode { get; set; }
+            public string TrackingCode { get; set; }
+            public string BudPepRegisterDate { get; set; }
+            public string ACCFinancialYearId { get; set; }
+            public string TblUserId { get; set; }
+        }
+        [HttpPost]
+        [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportSetWinner))]
+        public async Task<IActionResult> PostProjectManagementSystemProjectReportSetWinner([FromBody]ProjectManagementSystemProjectReportSetWinner setWinner)
+        {
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var resultData = await _projectManagementSystemprojectService.GetProjectManagementSystemReportSetWinner(setWinner.PmsPppId, setWinner.BudProjectId, setWinner.NationoanlCode, setWinner.TrackingCode, setWinner.BudPepRegisterDate, setWinner.ACCFinancialYearId,setWinner.TblUserId);
+
+            if (resultData == null)
+            {
+                return NotFound();
+            }
+
+
+            return Ok(resultData);
+        }
         [HttpPost]
         [Produces("application/json", Type = typeof(ProjectManagementSystemProjectReportGrid))]
         public async Task<IActionResult> PostProjectManagementSystemProjectReportTechnicalPropertyItemsGridAction([FromBody]ProjectManagementSystemProjectReportGrid projectManagementSystemProjectReport)

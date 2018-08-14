@@ -94,14 +94,41 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             var storeProcedureName = "[dbo].[GLB_SelectDocument]";
             var param = new DynamicParameters();
 
-            param.Add("@DocumentCode", documentCode);
-            param.Add("@TBL_UserID", null);
-            param.Add("@TypeOperation", 1);
+            param.Add("DocumentCode", documentCode+ "_PMS_ProjectAttachment");
+            param.Add("TBL_UserID", null);
+            param.Add("TypeOperation", 1);
 
             var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnectionOfDocumentDatabase, storeProcedureName, param, commandType: CommandType.StoredProcedure);
             return list;
         }
 
+
+        public async Task<dynamic> FindByDapperQueryDownload(byte fileTypeId,string tblIdID)
+        {
+            var param = new DynamicParameters();
+            var storeProcedureName = "";
+
+            switch (fileTypeId)
+            {
+
+                case 1:
+                    storeProcedureName = "[dbo].[TBL_Od_SelectByPK]";
+                    param.Add("TBL_OdID", tblIdID);
+                    break;
+                case 2:
+                    storeProcedureName = "[dbo].[TBL_Apd_SelectByPk]";
+                    param.Add("TBL_ApdID", tblIdID);
+                    break;
+                case 3:
+                    storeProcedureName = "[dbo].[TBL_Id_SelectByPk]";
+                    param.Add("TBL_IdID", tblIdID);
+                    break;
+            }
+            
+            var list = await SqlMapper.QueryAsync(_connectionFactory.GetConnectionOfDocumentDatabase, storeProcedureName, param, commandType: CommandType.StoredProcedure);
+            return list;
+        }
+   
         public async Task<dynamic> FindByDapperQuerySendToCartable(string budProjectId, string nationalCode, string trackingCode, string accFinancialYearID)
         {
           
@@ -113,12 +140,12 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
             storeProcedureName = "[dbo].[PMS_Ppp_SendToCartable]";
             var param = new DynamicParameters();
 
-            param.Add("@BUD_ProjectID_fk", budProjectId);
-            param.Add("@NationoanlCode", nationalCode);
-            param.Add("@Trackingcode", trackingCode);
-            param.Add("@BUD_PepRegisterDate", DateTime.Now.ToShortDateString());
-            param.Add("@ACC_FinancialYearID", accFinancialYearID);
-            param.Add("@TBL_UserID", 1);
+            param.Add("BUD_ProjectID_fk", budProjectId);
+            param.Add("NationoanlCode", nationalCode);
+            param.Add("Trackingcode", trackingCode);
+            param.Add("BUD_PepRegisterDate", DateTime.Now.ToShortDateString());
+            param.Add("ACC_FinancialYearID", accFinancialYearID);
+            param.Add("TBL_UserID", 1);
 
 
             // در کل این بلاک مهم نیست و داخل برنامه کلاینت ساید در قسمت گرید قیمت پیمانکاران به طرح بر اساس تعداد سطرهای افزوده شده چک می شود
@@ -127,6 +154,41 @@ namespace Core.ProjectInfrastructure.Persistence.RepositoryImplement.EntitiesRep
                 return list.OutputMessage;
             }
             catch(Exception e)
+            {
+                if (e.Message == "Sequence contains no elements")
+                {
+                    return "با موفقیت منتقل گردید";
+                }
+            }
+            return "عملیات ناموفق بود لطفا با پشتیبانی تماس حاصل فرمائید";
+        }
+
+
+        public async Task<dynamic> FindByDapperQuerySetWinner(string pmsPppId, string budProjectId, string nationoanlCode, string trackingCode, string budPepRegisterDate, string aCCFinancialYearId, string tblUserId)
+        {
+            var storeProcedureName = "select [dbo].[FxPMS_PppValidationForEditDelete] (" + pmsPppId + "," + budProjectId + ",null,"+ aCCFinancialYearId + ","+ tblUserId + ",9" + ")";
+            var output = SqlMapper.QueryFirst<string>(_connectionFactory.GetConnection, storeProcedureName);
+            if (output != "")
+                return output;
+
+            storeProcedureName = "[dbo].[PMS_Ppp_SetWinner]";
+            var param = new DynamicParameters();
+
+            param.Add("PMS_PppID", pmsPppId);
+            param.Add("BUD_ProjectID_fk", budProjectId);
+            param.Add("Trackingcode", trackingCode);
+            param.Add("NationoanlCode", nationoanlCode);
+            param.Add("Trackingcode", trackingCode);
+            param.Add("BUD_PepRegisterDate", budPepRegisterDate);
+            param.Add("ACC_FinancialYearID", aCCFinancialYearId);
+            param.Add("TBL_UserID", tblUserId);
+
+            try
+            {
+                var list = await SqlMapper.QueryFirstAsync(_connectionFactory.GetConnection, storeProcedureName, param, commandType: CommandType.StoredProcedure);
+                return list.OutputMessage;
+            }
+            catch (Exception e)
             {
                 if (e.Message == "Sequence contains no elements")
                 {
